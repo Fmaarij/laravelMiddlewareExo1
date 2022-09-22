@@ -27,7 +27,7 @@
                     @auth
                     <a href="{{ url('/accueil') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Accueil</a>
                     <a href="{{ url('/articles') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Articles</a>
-                    <a href="{{ url('/dashboard') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                    <a href="{{ url('createarticle') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Create Article</a>
 
                     @else
                         <a href="{{ url('/accueil')}}" class=" ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Accueil</a>
