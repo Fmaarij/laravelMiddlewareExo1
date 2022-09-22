@@ -18,8 +18,8 @@ class RoleVerification
     public function handle(Request $request, Closure $next)
     {
 
-        //verifier si l'utilisateur est administrateur (admin==1)
-        if(Auth::user()->admin=='1'){
+        //verifier si l'utilisateur est administrateur (role==admin)
+        if(Auth::user()->role=='admin'){
             //si oui, continuer jusqu'à la prochaine requete
             return $next($request);
         }else{

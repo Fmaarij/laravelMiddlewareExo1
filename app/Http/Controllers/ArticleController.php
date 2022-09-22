@@ -16,6 +16,11 @@ class ArticleController extends Controller {
     // }
     // fin de exercice part 1
 
+    //partie 4
+    // public function __construct() {
+    //     $this->middleware( 'auth' )->except();
+    // }
+
     public function index() {
 
         // if ( !Gate::allows( 'access-accueil' ) ) {
@@ -43,7 +48,8 @@ class ArticleController extends Controller {
 
     public function show( $id ) {
         $articles = Article::find( $id );
-        return view( 'backoffice.show', compact( 'articles' ) );
+        $users = User::find( $id );
+        return view( 'backoffice.show', compact( 'articles' ,'users') );
     }
 
     public function edit( $id ) {

@@ -33,10 +33,10 @@ Route::get('/accueil',[AccueilController::class,'index'])->middleware(['auth'])-
 Route::get('/articles',[ArticleController::class,'index'])->middleware(['auth'])->name('articles');
 // ->middleware(['roleverfication'])->name('articles');
 
-Route::get('/createarticle',[ArticleController::class,'create'])->name('createarticle');
-Route::post('/storearticle',[ArticleController::class,'store']);
+Route::get('/createarticle',[ArticleController::class,'create'])->middleware(['roleverfication'])->name('createarticle');
+Route::post('/storearticle',[ArticleController::class,'store'])->middleware(['roleverfication'])->name('storearticle');
 Route::get('/show/{id}',[ArticleController::class,'show']);
-Route::get('/edit/{id}',[ArticleController::class,'edit']);
-Route::put('/{id}/update',[ArticleController::class,'update']);
-Route::delete('/{id}/delete',[ArticleController::class,'destroy']);
+Route::get('/edit/{id}',[ArticleController::class,'edit'])->middleware(['roleverfication'])->name('editarticles');
+Route::put('/{id}/update',[ArticleController::class,'update'])->middleware(['roleverfication'])->name('updatearticle');
+Route::delete('/{id}/delete',[ArticleController::class,'destroy'])->middleware(['roleverfication'])->name('deletearticle');;
 
