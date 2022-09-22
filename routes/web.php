@@ -22,8 +22,13 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['roleverfication'])->name('dashboard');
+// ->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-Route::get('/accueil',[AccueilController::class,'index']);
-Route::get('/articles',[ArticleController::class,'index']);
+
+Route::get('/accueil',[AccueilController::class,'index'])->middleware(['auth'])->name('accueil');
+
+
+Route::get('/articles',[ArticleController::class,'index'])->middleware(['auth'])->name('articles');
+// ->middleware(['roleverfication'])->name('articles');
