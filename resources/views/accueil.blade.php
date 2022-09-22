@@ -6,6 +6,9 @@
         </li>
         <li><a href="{{ url('/articles') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Articles</a>
         </li>
+        <li>
+            <a href="{{ url('/users') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Users</a>
+        </li>
         <li><a href="{{ url('/dashboard') }}"
                 class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a></li>
         <li><a href="{{ url('/createarticle') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Ajouter

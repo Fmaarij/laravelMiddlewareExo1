@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class RoleVerification
+class USersMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,8 +18,7 @@ class RoleVerification
     public function handle(Request $request, Closure $next)
     {
 
-        //verifier si l'utilisateur est administrateur (role==admin)
-        if(Auth::user()->role=='webmaster'){
+        if(Auth::user()->role=='admin'){
             //si oui, continuer jusqu'à la prochaine requete
             return $next($request);
         }else{

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,5 +39,5 @@ Route::post('/storearticle',[ArticleController::class,'store'])->middleware(['ro
 Route::get('/show/{id}',[ArticleController::class,'show']);
 Route::get('/edit/{id}',[ArticleController::class,'edit'])->middleware(['roleverfication'])->name('editarticles');
 Route::put('/{id}/update',[ArticleController::class,'update'])->middleware(['roleverfication'])->name('updatearticle');
-Route::delete('/{id}/delete',[ArticleController::class,'destroy'])->middleware(['roleverfication'])->name('deletearticle');;
-
+Route::delete('/{id}/delete',[ArticleController::class,'destroy'])->middleware(['roleverfication'])->name('deletearticle');
+Route::get('/users',[UserController::class,'index'])->middleware(['usermiddleware'])->name('user');

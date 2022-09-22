@@ -5,7 +5,7 @@
             <th>Titre</th>
             <th>text</th>
             <th>User_ID</th>
-            @if($users->role == 'admin')
+            @if($users->role == 'webmaster')
             <th>Edit</th>
             <th>Delete</th>
             @endif
@@ -18,7 +18,7 @@
             <td>{{ $articles->text }}</td>
             <td>{{ $articles->user_id }}</td>
             <td>
-                @if($users->role == 'admin')
+                @if($users->role == 'webmaster')
                 <a href="/edit/{{ $articles->id }}">
                     <button>Edit</button>
                 </a>
