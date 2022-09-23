@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class RoleVerification
+class Redacteur
 {
     /**
      * Handle an incoming request.
@@ -17,14 +17,13 @@ class RoleVerification
      */
     public function handle(Request $request, Closure $next)
     {
-
-        //verifier si l'utilisateur est administrateur (role==admin)
-        if(Auth::user()->role=='webmaster' || Auth::user()->role=='redacteur'){
-            //si oui, continuer jusqu'à la prochaine requete
-            return $next($request);
-        }else{
-            //sinon renvoyer un 403 (accès forbidden)
-            abort('403');
-        }
+   //verifier si l'utilisateur est administrateur (role==redacteur)
+   if(Auth::user()->role=='redacteur'){
+    //si oui, continuer jusqu'à la prochaine requete
+    return $next($request);
+}else{
+    //sinon renvoyer un 403 (accès forbidden)
+    abort('403');
+}
     }
 }

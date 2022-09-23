@@ -13,8 +13,6 @@
                 class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a></li>
         <li><a href="{{ url('/createarticle') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Ajouter
                 Articles</a></li>
-
-
     </ul>
 
     <form method="POST" action="{{ route('logout') }}">
@@ -25,3 +23,4 @@
         </button>
     </form>
 </div>
+
