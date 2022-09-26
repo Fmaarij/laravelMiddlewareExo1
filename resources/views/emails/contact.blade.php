@@ -14,7 +14,7 @@
     <div style="background-color: red; display:flex; padding:2.5rem;" class="container my-5 bg-danger">
         <div class="d-flex ">
             <div class="sujet">
-                <h5  class="bg-danger">Suject : {{ $subject }}</h5>
+                <h5  class="bg-danger">Suject : {{ $data['sujet'] }}</h5>
             </div>
             <div>
                 <p>Message : {{ $data['msg'] }}</p>

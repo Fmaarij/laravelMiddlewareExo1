@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactMessageMail;
 use App\Models\Contact;
+use App\Models\EmailSubjects;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -18,7 +19,8 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::all();
-        return view('backoffice.contact.index', compact('contacts'));
+        $sujets = EmailSubjects::all();
+        return view('backoffice.contact.index', compact('contacts','sujets'));
     }
 
     /**
@@ -29,7 +31,8 @@ class ContactController extends Controller
     public function create()
     {
         $contacts = Contact::all();
-        return view('backoffice.contact.contact', compact('contacts'));
+        $sujets = EmailSubjects::all();
+        return view('backoffice.contact.contact', compact('contacts','sujets'));
     }
 
     /**
@@ -41,11 +44,11 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $contacts = new Contact;
-        $contacts->sujet = $request->sujet;
+        $contacts->email_subject_id	 = $request->email_subject_id	;
         $contacts->email = $request->email;
         $contacts->msg = $request->msg;
         $contacts->save();
-        $user = ['sujet' => $request->sujet,'email' => $request->email, 'msg' => $request->msg];
+        $user = ['sujet' => $request->email_subject_id	,'email' => $request->email, 'msg' => $request->msg];
         Mail::to($user['email'])->send(new ContactMessageMail($user));
         return redirect( "contactpage");
         }

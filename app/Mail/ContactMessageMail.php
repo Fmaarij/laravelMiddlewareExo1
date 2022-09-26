@@ -32,6 +32,6 @@ class ContactMessageMail extends Mailable
         return $this->from('maarij_faisal@hotmail.com')
                     ->subject('Confirmation de votre mail')
                     ->view('emails.contact')
-                    ->with(['subject'=> $this->data['sujet']]);
+                    ->with(['suject'=> $this->data['sujet']]);
     }
 }
