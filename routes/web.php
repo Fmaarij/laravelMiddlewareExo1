@@ -45,3 +45,4 @@ Route::get('/users',[UserController::class,'index'])->middleware(['usermiddlewar
 Route::get('/contactpage',[ContactController::class,'index'])->middleware(['auth'])->name('contactpage');
 Route::get('/sendmsg',[ContactController::class,'create'])->middleware(['auth'])->name('sendmsg');
 Route::post('/sendMail',[ContactController::class,'store'])->middleware(['auth']);
+// Route::get('/confirmation',[ContactController::class,'show'])->middleware(['auth']);

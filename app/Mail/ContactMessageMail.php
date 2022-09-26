@@ -10,15 +10,16 @@ use Illuminate\Queue\SerializesModels;
 class ContactMessageMail extends Mailable
 {
     use Queueable, SerializesModels;
+    public $data = [];
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Array $user)
     {
-        //
+        $this->data = $user;
     }
 
     /**

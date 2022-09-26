@@ -44,7 +44,8 @@ class ContactController extends Controller
         $contacts->email = $request->email;
         $contacts->msg = $request->msg;
         $contacts->save();
-        Mail::to($request->email)->send(new ContactMessageMail());
+        $user = ['email' => $request->email, 'msg' => $request->msg];
+        Mail::to($user['email'])->send(new ContactMessageMail($user));
         return redirect( "contactpage");
         }
 
@@ -56,8 +57,8 @@ class ContactController extends Controller
      */
     public function show()
     {
-        $contacts= Contact::all();
-        return view('emails.contact', compact('contacts'));
+        // $contacts= Contact::all();
+        // return view('emails.contact.index', compact('contacts'));
     }
 
     /**

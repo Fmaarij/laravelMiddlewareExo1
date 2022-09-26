@@ -8,8 +8,9 @@
 </head>
 <body>
 
-    <h1>Mail </h1>
-    <p>Message</p>
+
+    <h1>Mail :  {{$data['email']}}</h1>
+    <p>Message : {{$data['msg']}}</p>
 
 </body>
 </html>
