@@ -41,10 +41,11 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $contacts = new Contact;
+        $contacts->sujet = $request->sujet;
         $contacts->email = $request->email;
         $contacts->msg = $request->msg;
         $contacts->save();
-        $user = ['email' => $request->email, 'msg' => $request->msg];
+        $user = ['sujet' => $request->sujet,'email' => $request->email, 'msg' => $request->msg];
         Mail::to($user['email'])->send(new ContactMessageMail($user));
         return redirect( "contactpage");
         }

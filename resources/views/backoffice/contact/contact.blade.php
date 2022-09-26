@@ -11,6 +11,8 @@
 <body>
     <form action="/sendMail" method="post" enctype="multipart/form-data">
         @csrf
+        <label for="">Subject : </label>
+        <input type="text" name="sujet">
         <label for="">Email : </label>
         <input type="email" name="email">
         <label for="">Message : </label>

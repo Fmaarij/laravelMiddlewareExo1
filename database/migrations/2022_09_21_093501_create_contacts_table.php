@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('sujet');
             $table->string('email');
             $table->string('msg');
-            // $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
