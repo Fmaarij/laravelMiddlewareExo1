@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +42,6 @@ Route::get('/edit/{id}',[ArticleController::class,'edit'])->middleware(['rolever
 Route::put('/{id}/update',[ArticleController::class,'update'])->middleware(['roleverfication'])->name('updatearticle');
 Route::delete('/{id}/delete',[ArticleController::class,'destroy'])->middleware(['roleverfication'])->name('deletearticle');
 Route::get('/users',[UserController::class,'index'])->middleware(['usermiddleware'])->name('user');
+Route::get('/contactpage',[ContactController::class,'index'])->middleware(['auth'])->name('contactpage');
+Route::get('/sendmsg',[ContactController::class,'create'])->middleware(['auth'])->name('sendmsg');
+Route::post('/sendMail',[ContactController::class,'store'])->middleware(['auth']);

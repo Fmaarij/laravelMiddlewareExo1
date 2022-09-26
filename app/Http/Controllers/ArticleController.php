@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestMail;
 use App\Models\Article;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Mail;
 
 class ArticleController extends Controller {
 
@@ -42,7 +44,7 @@ class ArticleController extends Controller {
         $articles->text = $request->text;
         $articles->user_id = Auth::user()->id;
         $articles->save();
-
+        // Mail::to('test@gmail.test')->send(new TestMail());
         return redirect()->back();
     }
 
