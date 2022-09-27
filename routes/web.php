@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,3 +47,7 @@ Route::get('/contactpage',[ContactController::class,'index'])->middleware(['auth
 Route::get('/sendmsg',[ContactController::class,'create'])->middleware(['auth'])->name('sendmsg');
 Route::post('/sendMail',[ContactController::class,'store'])->middleware(['auth']);
 // Route::get('/confirmation',[ContactController::class,'show'])->middleware(['auth']);
+Route::get('/newspage',[NewsletterController::class,'index'])->name('newspage');
+Route::get('/createnews',[NewsletterController::class,'create'])->name('createnews');
+Route::post('/storenewsletter',[NewsletterController::class,'store']);
+

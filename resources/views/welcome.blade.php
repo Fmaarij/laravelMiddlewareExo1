@@ -429,6 +429,8 @@
 
                     <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Log
                         in</a>
+                      <a href="{{ url('/createnews') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">
+                         news letter</a>
 
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}"

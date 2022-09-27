@@ -13,10 +13,12 @@
                 class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a></li>
         <li><a href="{{ url('/createarticle') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">Ajouter
                 Articles</a></li>
-                <li><a href="{{ url('/contactpage') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">
-                    See msg</a></li>
-                    <li><a href="{{ url('/sendmsg') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">
-                        Send msg</a></li>
+        <li><a href="{{ url('/contactpage') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">
+                See msg</a></li>
+        <li><a href="{{ url('/sendmsg') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">
+                Send msg</a></li>
+                <li><a href="{{ url('/createnews') }}" class="ml-4  text-sm text-gray-700 dark:text-gray-500 underline">
+                    s'inscrire à la news letter</a></li>
     </ul>
 
     <form method="POST" action="{{ route('logout') }}">
@@ -27,4 +29,3 @@
         </button>
     </form>
 </div>
-
